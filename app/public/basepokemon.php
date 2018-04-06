@@ -73,11 +73,11 @@
 
               echo " <!-- Fiche pokemon début -->
             <div class=\"row\">
-                <div claa=\"col-3\">
+                <div class=\"col-3\">
                     <img class=\"img-fluid\" src=\"//via.placeholder.com/120x120\">
                 </div>
                 <div class=\"col-9\">";
-                  echo $ligne['nom'];
+                  echo "<h4>".$ligne['nom']."</h4>";
                     
                  echo "   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto, asperiores blanditiis, commodi deleniti ea error eveniet expedita ipsa modi necessitatibus, odio perferendis quia rem repellendus sint soluta vel voluptate.</p>
                 </div>
