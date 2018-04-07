@@ -71,15 +71,14 @@
             while ($ligne=$reponse->fetch()){
 
 
-              echo " <!-- Fiche pokemon début -->
+                echo " <!-- Fiche pokemon début -->
             <div class=\"row\">
-                <div class=\"col-3\">
-                    <img class=\"img-fluid\" src=\"//via.placeholder.com/120x120\">
+                <div class=\"col-3\">";
+                echo '<img class="img-fluid" src="images/'.$ligne['Numero'].".png".'" />
                 </div>
-                <div class=\"col-9\">";
-                  echo "<h4>".$ligne['nom']."</h4>";
-                    
-                 echo "   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. A architecto, asperiores blanditiis, commodi deleniti ea error eveniet expedita ipsa modi necessitatibus, odio perferendis quia rem repellendus sint soluta vel voluptate.</p>
+                <div class=\"col-9\">';
+                  echo "<h4>"."Numéro: ".$ligne['Numero']." ".$ligne['Nom_fr']."/".$ligne['Nom_en']."</h4>";
+                echo "<p>".$ligne['Description']."</p>
                 </div>
             </div>
             <!-- Fiche pokemon fin -->";
