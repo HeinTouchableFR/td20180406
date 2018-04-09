@@ -44,7 +44,6 @@
 
                     </form>
                 </ul>
-
             </div>
         </nav>
 
@@ -68,15 +67,11 @@
                 <li><a href="roche.php"class="btn btn-primary">Type Roche</a></li>
                 <li><a href="dragon.php"class="btn btn-primary">Type Dragon</a></li>
                 <li><a href="normal.php"class="btn btn-primary">Type Normal</a></li>
-
             </ul>
         </div>
         <div class="col-9 block-pokemon">
 
             <?php
-            $base = mysqli_connect ( 'localhost', 'root', 'root', 'local' );
-            mysqli_set_charset($base, "utf8");
-
             try{
                 $db=new PDO(
                     "mysql:dbname=local;host=localhost",
@@ -85,14 +80,12 @@
                     array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")
 
                 );
-
-
             }catch(PDOException $exception){
                 echo "Erreur:".$exception->getMessage();
             }
 
 
-            $reponse=$db->query("SELECT * FROM Pokemon");
+            $reponse=$db->query("SELECT * FROM Pokemon WHERE Type1='Insect'OR Type2='Insect'");
 
             while ($ligne=$reponse->fetch()){
 
@@ -104,16 +97,15 @@
                         
                 </div>
                 <div class=\"col-9\">';
-                  echo "<h4>"."Numéro: ".$ligne['Numero']." ".$ligne['Nom_fr']."/".$ligne['Nom_en'] ." ". '<img class="img-fluid" src="images/'.$ligne['Type1'].".png".'"> <img class="img-fluid" src="images/'.$ligne['Type2'].".png".'"></h4>';
+                echo "<h4>"."Numéro: ".$ligne['Numero']." ".$ligne['Nom_fr']."/".$ligne['Nom_en'] ." ". '<img class="img-fluid" src="images/'.$ligne['Type1'].".png".'"> <img class="img-fluid" src="images/'.$ligne['Type2'].".png".'"></h4>';
 
                 echo "<p>".$ligne['Description']."</p>
                 </div>
             </div>
             <!-- Fiche pokemon fin -->";
             }
-
             ?>
-            
+
         </div>
     </div>
     <footer>

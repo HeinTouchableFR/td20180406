@@ -37,14 +37,13 @@
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
-                    <form action="recherche.php" method="get">
+                </ul>
+                <form action="recherche.php" method="get">
 
                         <input type="text" size="20" name="mdp">
                         <input type="submit" value="OK">
 
-                    </form>
-                </ul>
-
+                </form>
             </div>
         </nav>
 
@@ -74,8 +73,9 @@
         <div class="col-9 block-pokemon">
 
             <?php
-            $base = mysqli_connect ( 'localhost', 'root', 'root', 'local' );
-            mysqli_set_charset($base, "utf8");
+            if (isset($_GET['mdp'])){
+                $mdp=$_GET['mdp'];
+            }
 
             try{
                 $db=new PDO(
@@ -85,17 +85,14 @@
                     array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")
 
                 );
-
-
             }catch(PDOException $exception){
                 echo "Erreur:".$exception->getMessage();
             }
 
 
-            $reponse=$db->query("SELECT * FROM Pokemon");
-
+            $reponse=$db->query("SELECT * FROM Pokemon WHERE Nom_fr LIKE '%$mdp%'OR Nom_en LIKE '%$mdp%'OR Type1 LIKE '%$mdp%'OR Type2 LIKE '%$mdp%' OR Description LIKE '%$mdp%'");
+            $trouve=false;
             while ($ligne=$reponse->fetch()){
-
 
                 echo " <!-- Fiche pokemon début -->
             <div class=\"row\">
@@ -104,16 +101,17 @@
                         
                 </div>
                 <div class=\"col-9\">';
-                  echo "<h4>"."Numéro: ".$ligne['Numero']." ".$ligne['Nom_fr']."/".$ligne['Nom_en'] ." ". '<img class="img-fluid" src="images/'.$ligne['Type1'].".png".'"> <img class="img-fluid" src="images/'.$ligne['Type2'].".png".'"></h4>';
+                echo "<h4>"."Numéro: ".$ligne['Numero']." ".$ligne['Nom_fr']."/".$ligne['Nom_en'] ." ". '<img class="img-fluid" src="images/'.$ligne['Type1'].".png".'"> <img class="img-fluid" src="images/'.$ligne['Type2'].".png".'"></h4>';
 
                 echo "<p>".$ligne['Description']."</p>
                 </div>
             </div>
             <!-- Fiche pokemon fin -->";
+                $trouve=true;
             }
-
+            if ($trouve==false){echo "Le pokémon ou le type ou la description n'a pas pu être trouvé. Veuillez renouveller votre recherche";}
             ?>
-            
+
         </div>
     </div>
     <footer>
