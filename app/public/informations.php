@@ -98,8 +98,7 @@
                 echo "Erreur:".$exception->getMessage();
             }
 
-            echo "Logo de la franchise Pokémon.
-Logo de la franchise Pokémon.
+            echo "
 Pokémon (en japonais ポケモン) est une franchise créée par Satoshi Tajiri en 1996, présente en particulier en jeu vidéo, dans des séries éditées par Nintendo. Selon les statistiques officielles de Nintendo en 2010, les jeux Pokémon se sont vendus à environ 250 millions d’unités.<br><br> Le jeu vidéo Pokémon Rouge et Bleu s’est vendu à plus de 30 millions d’exemplaires, ce qui en fait un record des ventes dans l’histoire du jeu vidéo.<br><br>
 
 La franchise est également exploitée sous forme d’anime, de mangas, et de jeux de cartes à collectionner. <br><br>Dans la série animée homonyme, le personnage principal, Sacha, voyage à travers diverses régions fictives dans le but d’attraper de nouvelles sortes de monstres éponymes, un concept qu’on retrouve également dans les jeux vidéo de la franchise. Pokémon a eu un impact culturel très important dans les pays où il a été introduit, dont le Japon, les États-Unis, le Canada, la France et d'autres pays européens.<br><br>";

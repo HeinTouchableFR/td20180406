@@ -101,20 +101,25 @@
             while ($ligne=$reponse->fetch()){
 
 
-                echo " <!-- Fiche pokemon début -->
-            <div class=\"row\">
-                <div class=\"col-3\">";
-                echo '<img class="img-fluid" src="images/'.$ligne['Numero'].".png".'" />
+                echo "
+<div class='col-9 block-pokemon'>
+            <!-- Fiche pokemon début -->
+            
+            <div class='row'>
+                <div class='col-2'>";
+                echo '<img class="img-fluid"  src="images/'.$ligne['Numero'].".png".'" />
                         
                 </div>
-                <div class=\"col-9\">';
+                <div class=col-10>';
                 echo "<h4>"."Numéro: ".$ligne['Numero']." ".$ligne['Nom_fr']."/".$ligne['Nom_en'] ." ". '<img class="img-fluid" src="images/'.$ligne['Type1'].".png".'"> <img class="img-fluid" src="images/'.$ligne['Type2'].".png".'"></h4>';
 
                 echo "<p>".$ligne['Description']."</p>
                 </div>
             </div>
+            </div>
             <!-- Fiche pokemon fin -->";
             }
+
             ?>
 
         </div>
