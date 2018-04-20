@@ -29,7 +29,7 @@
                         <a class="nav-link" href="basepokemon.php">Accueil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="informations.php">Informations</a>
+                        <a class="nav-link" href="#">Informations</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>
@@ -98,27 +98,17 @@
                 echo "Erreur:".$exception->getMessage();
             }
 
+            echo "Logo de la franchise Pokémon.
+Logo de la franchise Pokémon.
+Pokémon (en japonais ポケモン) est une franchise créée par Satoshi Tajiri en 1996, présente en particulier en jeu vidéo, dans des séries éditées par Nintendo. Selon les statistiques officielles de Nintendo en 2010, les jeux Pokémon se sont vendus à environ 250 millions d’unités.<br><br> Le jeu vidéo Pokémon Rouge et Bleu s’est vendu à plus de 30 millions d’exemplaires, ce qui en fait un record des ventes dans l’histoire du jeu vidéo.<br><br>
 
-            $reponse=$db->query("SELECT * FROM Pokemon WHERE Nom_fr LIKE '%$mdp%'OR Nom_en LIKE '%$mdp%'OR Type1 LIKE '%$mdp%'OR Type2 LIKE '%$mdp%' OR Description LIKE '%$mdp%'");
-            $trouve=false;
-            while ($ligne=$reponse->fetch()){
+La franchise est également exploitée sous forme d’anime, de mangas, et de jeux de cartes à collectionner. <br><br>Dans la série animée homonyme, le personnage principal, Sacha, voyage à travers diverses régions fictives dans le but d’attraper de nouvelles sortes de monstres éponymes, un concept qu’on retrouve également dans les jeux vidéo de la franchise. Pokémon a eu un impact culturel très important dans les pays où il a été introduit, dont le Japon, les États-Unis, le Canada, la France et d'autres pays européens.<br><br>";
 
-                echo " <!-- Fiche pokemon début -->
-            <div class=\"row\">
-                <div class=\"col-3\">";
-                echo '<img class="img-fluid" src="images/'.$ligne['Numero'].".png".'" />
-                        
-                </div>
-                <div class=\"col-9\">';
-                echo "<h4>"."Numéro: ".$ligne['Numero']." ".$ligne['Nom_fr']."/".$ligne['Nom_en'] ." ". '<img class="img-fluid" src="images/'.$ligne['Type1'].".png".'"> <img class="img-fluid" src="images/'.$ligne['Type2'].".png".'"></h4>';
+            echo "Dans l'univers des Pokémon, les animaux du monde réel n'existent pas (ou très peu). Le monde est peuplé de Pokémon, des créatures qui vivent en harmonie avec les humains, mais possèdent des aptitudes quasiment impossibles pour des animaux du monde réel, telles que cracher du feu, comme Dracaufeu, ou encore générer de grandes quantités d'électricité, comme Magnéti.<br><br> Chaque sorte de Pokémon possède un nom, qui peut à la fois être utilisé pour parler de Pokémon individuels ou de l'ensemble des Pokémon de la même sorte. Certains Pokémon dits « légendaires » sont les seuls représentants de leur sorte et dans les jeux récents sont des entités incarnant une puissance naturelle. <br><br>Dans la série animée, les Pokémon ne peuvent prononcer en règle générale que leur nom, mais il existe quelques cas rares où des Pokémon ont appris un langage humain. Des humains utilisent ces aptitudes dans leurs activités professionnelles : ainsi les Caninos de l'Agent Jenny l'aident à poursuivre les criminels.<br><br>
 
-                echo "<p>".$ligne['Description']."</p>
-                </div>
-            </div>
-            <!-- Fiche pokemon fin -->";
-                $trouve=true;
-            }
-            if ($trouve==false){echo "Le pokémon ou le type ou la description n'a pas pu être trouvé. Veuillez renouveller votre recherche";}
+Certains dressent les Pokémon pour organiser des combats entre eux, transportant généralement les Pokémon dans des Poké balls, des balles compactes où un Pokémon peut être contenu. Ces dresseurs Pokémon voyagent à travers le monde dans le but d'attraper le plus grand nombre de Pokémon, puis éventuellement devenir Maître Pokémon, un titre donné au dresseur ayant battu le maître de la ligue.<br><br> Certains dresseurs enregistrent les informations des Pokémon qu'ils ont capturés ou observés dans un Pokédex, un appareil électronique qui répertorie et affiche les informations sur les différents Pokémon. À partir de l'âge de dix ans, il est possible de commencer son apprentissage de dresseur en recevant une licence de la Ligue Pokémon. <br><br>L'apprentissage consiste à partir capturer des Pokémon dans leurs habitats naturels, puis à les entrainer au combat.
+
+Les matchs Pokémon consistent en combats entre les Pokémon de deux dresseurs, et se terminent quand tous les Pokémon de l'un d'entre eux sont KO. La mort des Pokémon est donc évitée, et les Pokémon peuvent être soignés au Centre Pokémon, un bâtiment où les infirmières guérissent les Pokémon blessés.<br><br> Pour participer à des compétitions, les dresseurs peuvent se déplacer aux différentes Arènes Pokémon où un badge leur est offert s'ils sortent victorieux d'un match contre le champion d'arène. Après avoir gagné tous les badges de la région, un dresseur peut partir au siège de la Ligue Pokémon pour affronter quatre dresseurs d'élite, souvent appelés le « Conseil des 4 ». Ce n'est qu'après avoir battu ces quatre dresseurs que le dresseur peut affronter le Maître de la Ligue.";
             ?>
 
         </div>

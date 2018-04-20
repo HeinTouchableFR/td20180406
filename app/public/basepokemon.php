@@ -29,7 +29,7 @@
                         <a class="nav-link" href="basepokemon.php">Accueil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Features</a>
+                        <a class="nav-link" href="informations.php">Informations</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#">Pricing</a>
@@ -37,10 +37,10 @@
                     <li class="nav-item">
                         <a class="nav-link disabled" href="#">Disabled</a>
                     </li>
-                    <form action="recherche.php" method="get">
+                    <form class="form-inline my-2 my-lg-0" action="recherche.php" method="get">
 
-                        <input type="text" size="20" name="mdp">
-                        <input type="submit" value="OK">
+                        <input class="form-control mr-sm-2" type="text" size="20" name="mdp">
+                        <input class="btn btn-outline-success my-2 my-sm-0"type="submit" value="OK">
 
                     </form>
                 </ul>
@@ -53,25 +53,34 @@
     <div class="row">
         <div class="col-3">
             <ul class="menu-famille">
-                <li><a href="plante.php"class="btn btn-primary">Type Plante</a></li>
-                <li><a href="poison.php"class="btn btn-primary">Type Poison</a></li>
-                <li><a href="feu.php"class="btn btn-primary">Type Feu</a></li>
-                <li><a href="combat.php"class="btn btn-primary">Type Combat</a></li>
-                <li><a href="eau.php"class="btn btn-primary">Type Eau</a></li>
-                <li><a href="insect.php"class="btn btn-primary">Type Insecte</a></li>
-                <li><a href="vol.php"class="btn btn-primary">Type Vol</a></li>
-                <li><a href="spectre.php"class="btn btn-primary">Type Spectre</a></li>
-                <li><a href="sol.php"class="btn btn-primary">Type Sol</a></li>
-                <li><a href="glace.php"class="btn btn-primary">Type Glace</a></li>
-                <li><a href="electrik.php"class="btn btn-primary">Type Electrique</a></li>
-                <li><a href="psy.php"class="btn btn-primary">Type Psy</a></li>
-                <li><a href="roche.php"class="btn btn-primary">Type Roche</a></li>
-                <li><a href="dragon.php"class="btn btn-primary">Type Dragon</a></li>
-                <li><a href="normal.php"class="btn btn-primary">Type Normal</a></li>
+                <form action="recherchetype.php">
+                    <div class="form-group">
+                        <label for="choixType">Choix du type</label>
+                        <select class="form-control" name="type" id="choixType">
+                            <option value="Plante">Plante</option>
+                            <option value="Eau">Eau</option>
+                            <option value="Feu">Feu</option>
+                            <option value="Combat">Combat</option>
+                            <option value="Dragon">Dragon</option>
+                            <option value="Electrik">Electrique</option>
+                            <option value="Glace">Glace</option>
+                            <option value="insect">Insecte</option>
+                            <option value="Normal">Normal</option>
+                            <option value="Poison">Poison</option>
+                            <option value="Psy">Psy</option>
+                            <option value="Roche">Roche</option>
+                            <option value="Sol">Sol</option>
+                            <option value="Spectre">Spectre</option>
+                            <option value="Vol">Vol</option>
+                        </select>
+                    </div>
+                    <button class="btn">Ok</button>
+                </form>
+
 
             </ul>
         </div>
-        <div class="col-9 block-pokemon">
+        <div class="col-9 ">
 
             <?php
             $base = mysqli_connect ( 'localhost', 'root', 'root', 'local' );
@@ -100,7 +109,7 @@
                 echo " <!-- Fiche pokemon début -->
             <div class=\"row\">
                 <div class=\"col-3\">";
-                echo '<img class="img-fluid" src="images/'.$ligne['Numero'].".png".'" />
+                echo '<img class="img-fluid"  src="images/'.$ligne['Numero'].".png".'" />
                         
                 </div>
                 <div class=\"col-9\">';
@@ -116,9 +125,8 @@
             
         </div>
     </div>
-    <footer>
-        Lorem ipsum dolor sit amet, consectetur adipisicing elit. A distinctio ex iste quo? Dignissimos ea expedita fugit minima nulla tenetur vel. Aliquam asperiores fugit iste iure nam necessitatibus tempore voluptatem?
-    </footer>
+    <footer class="blockquote-footer">
+        © 2018 Pokémon. © 1995-2018 Nintendo / Creatures Inc./GAME FREAK inc. Pokémon, Nintendo 3DS, Nintendo DS, Wii, Wii et WiiWare sont des marques de Nintendo. Le logo YouTube est une marque de Google Inc. Les autres marques à leurs propriétaires respectifs.    </footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
