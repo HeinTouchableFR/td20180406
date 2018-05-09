@@ -1180,3 +1180,14 @@ Stack trace:
 [20-Apr-2018 09:08:24 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /app/public/informations.php on line 107
 [20-Apr-2018 09:08:38 UTC] PHP Parse error:  syntax error, unexpected 'echo' (T_ECHO), expecting ',' or ';' in /app/public/informations.php on line 107
 [20-Apr-2018 09:18:23 UTC] PHP Parse error:  syntax error, unexpected '<' in /app/public/informations.php on line 103
+[09-May-2018 16:18:34 UTC] PHP Fatal error:  Uncaught Error: Call to undefined function eregi_replace() in /app/public/recherche.php:119
+Stack trace:
+#0 {main}
+  thrown in /app/public/recherche.php on line 119
+[09-May-2018 16:21:56 UTC] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /app/public/recherche.php on line 100
+[09-May-2018 16:21:56 UTC] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /app/public/recherche.php on line 100
+[09-May-2018 16:21:56 UTC] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /app/public/recherche.php on line 100
+[09-May-2018 16:21:56 UTC] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /app/public/recherche.php on line 100
+[09-May-2018 16:21:56 UTC] PHP Warning:  preg_replace(): Delimiter must not be alphanumeric or backslash in /app/public/recherche.php on line 100
+[09-May-2018 16:27:08 UTC] PHP Fatal error:  Cannot redeclare highlight() (previously declared in /app/public/recherche.php:101) in /app/public/recherche.php on line 101
+[09-May-2018 16:29:52 UTC] PHP Notice:  Undefined variable: ligne in /app/public/recherche.php on line 99

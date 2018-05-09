@@ -1,8 +1,10 @@
-
+body {
+    background-color: #d5dfef;
+}
 
 footer {
-    background-color: #F1F2F3;
-    color:#000000;
+    background-color: #4879AB;
+    color:#FFFF00;
     margin-top: 20px;
     padding: 10px 30px;
 }
@@ -13,6 +15,7 @@ ul.menu-famille{
 
 header{
     margin-bottom: 20px;
+
 }
 .block-pokemon >div{
     margin-bottom: 20px;
@@ -20,3 +23,16 @@ header{
 .block-pokemon>div:last-child{
     margin-bottom: 0;
 }
+
+span.surlign1{
+    background-color: orange;
+}
+
+span.surlign2{
+    background-color: yellow;
+}
+
+.navbar {
+    background-color: #4879AB;
+}
+
