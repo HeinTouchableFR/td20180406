@@ -26,13 +26,15 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item active">
-                        <a class="nav-link" href="basepokemon.php" style="color: #FFFFFF";>Accueil <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="index.php" style="color: #FFFFFF";>Accueil <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="informations.php" style="color: #FFFFFF";>Informations</a>
                     </li>
-
-                    <form class="form-inline my-2 my-lg-0" action="recherche.php" method="get" style="margin-left: 350px" >
+                    <li class="nav-item">
+                        <a class="nav-link" href="jeu.php" style="color: #FFFFFF";>Les Jeux</a>
+                    </li>
+                    <form class="form-inline my-2 my-lg-0" action="recherche.php" method="get" style="margin-left: 300px" >
 
                         <input class="form-control mr-sm-2" type="text" size="20" name="search">
                         <input class="btn btn-outline-light my-2 my-sm-0 "type="submit" value="OK">

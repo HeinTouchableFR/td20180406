@@ -71,15 +71,18 @@
                             <option value="Vol">Vol</option>
                         </select>
                     </div>
-                    <button class="btn">Ok</button>
+                    <button class="btn btn-outline-info my-2 my-sm-0">Ok</button>
                 </form>
 
 
             </ul>
         </div>
-        <div class="col-9 block-pokemon">
+        <div class="col-9 ">
 
             <?php
+            $base = mysqli_connect ( 'localhost', 'root', 'root', 'local' );
+            mysqli_set_charset($base, "utf8");
+
             try{
                 $db=new PDO(
                     "mysql:dbname=local;host=localhost",
@@ -88,13 +91,14 @@
                     array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES 'utf8'")
 
                 );
+
+
             }catch(PDOException $exception){
                 echo "Erreur:".$exception->getMessage();
             }
 
-            $type= $_GET['type'];
 
-            $reponse=$db->query("SELECT * FROM Pokemon WHERE Type1 LIKE'$type' OR Type2 LIKE'.$type.'");
+            $reponse=$db->query("SELECT * FROM Jeu");
 
             while ($ligne=$reponse->fetch()){
 
@@ -105,13 +109,14 @@
             
             <div class='row'>
                 <div class='col-2'>";
-                echo '<img class="img-fluid"  src="images/'.$ligne['Numero'].".png".'" />
+                echo '<img class="img-fluid"  src="images/'.$ligne['id']."j.png".'" />
                         
                 </div>
                 <div class=col-10>';
-                echo "<h4>"."Numéro: ".$ligne['Numero']." ".$ligne['Nom_fr']."/".$ligne['Nom_en'] ." ". '<img class="img-fluid" src="images/'.$ligne['Type1'].".png".'"> <img class="img-fluid" src="images/'.$ligne['Type2'].".png".'"></h4>';
+                echo "<h4>"." ".$ligne['Nom']." "."</h4>";
 
-                echo "<p>".$ligne['Description']."</p>
+                echo "<p>Date de Sortie: ".$ligne['DateSortie']."</p>
+<p>Plateforme: ".$ligne['Plateforme']."</p>
                 </div>
             </div>
             </div>
